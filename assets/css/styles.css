@@ -1,0 +1,331 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    min-height: 100vh;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+h1,
+h2 {
+    color: #444;
+
+
+}
+h3 {
+    color: #999;
+}
+.btn {
+    background: #ff4a17;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+}
+.btn:hover {
+    color: #ff4a17;
+    background: white;
+    padding: 3px 8px;
+    border: 2px solid #ff4a17;
+}
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 10px;
+    border-bottom: 2px solid #999;
+}
+table {
+    padding: 10px;
+}
+th,
+td {
+    text-align: left;
+    padding: 8px;
+}
+.side-menu {
+    position: fixed;
+    background: #ff4a17;
+    width: 20vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.side-menu .brand-name {
+    height: 18vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.side-menu .brand-name h1{
+    color: #ffff;
+}
+.side-menu li a{
+    font-size: 18px;
+    padding: 10px 40px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.side-menu li a:hover {
+    background: white;
+    color: #ff724a;
+}
+.container {
+    position: absolute;
+    right: 0;
+    width: 80vw;
+    height: 100vh;
+    background: #f1f1f1;
+}
+.container .header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80vw;
+    height: 10vh;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.container .header .nav {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+.container .header .nav .user {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    /* margin-left: 80%; */
+}
+/* .container .header .nav .user img {
+    width: 50px;
+    height: 50px;
+} */
+.container .content {
+    position: relative;
+    margin-top: 10vh;
+    min-height: 90vh;
+    background: #f1f1f1;
+}
+.container .content .cards {
+    padding: 20px 15px;
+    display: flex;
+    align-items: center;
+
+}
+.container .content .cards .card {
+    width: 250px;
+    height: 150px;
+    background: white;
+    margin: 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container .content .cards .card .box h1,h3{ 
+    text-align: center;
+}
+
+
+.container .content .content-2 {
+    min-height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.container .content .content-2 .requests {
+    min-height: auto;
+    flex: 3;
+    background: #ffff;
+    margin: 0 25px 25px 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+}
+
+.container .content .content-2 .requests .admin-requests{
+    display: flex;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #f1f1f1;
+}
+
+.container .content .content-2 .requests .admin-requests img{
+    width: 40px;
+    height: 40px;
+    flex: 2;
+}
+.container .content .content-2 .admin-requests .request-content{
+    padding: 0px 20px;
+    width: 100%;
+}
+.container .content .content-2 .admin-requests .request-content .sender{
+    padding: 5px 0px;
+}
+.container .content .content-2 .admin-requests .request-content .sender span{
+    font-weight: bold;
+}
+.container .content .content-2 .admin-requests .request-content a{
+    margin-left: 85%;
+}
+
+/* ========================================================================
+    Academic request
+============================================================================ */
+.container .content .content-2 .academic {
+    min-height: auto;
+    flex: 3;
+    background: #ffff;
+    margin: 0 25px 25px 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+}
+.container .content .content-2 .academic .academic-requests{
+    display: flex;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #f1f1f1;
+}
+
+.container .content .content-2 .academic .academic-requests img{
+    width: 40px;
+    height: 40px;
+    flex: 2;
+}
+
+.container .content .content-2 .academic-requests .request-content{
+    padding: 0px 20px;
+    width: 100%;
+}
+.container .content .content-2 .academic-requests .request-content .sender{
+    padding: 5px 0px;
+}
+.container .content .content-2 .academic-requests .request-content .sender span{
+    font-weight: bold;
+}
+.container .content .content-2 .academic-requests .request-content a{
+    margin-left: 85%;
+}
+
+/* ====================================================================
+Past requests
+========================================================================
+*/
+
+.container .content .content-2 .requests .my-requests{
+    display: flex;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #f1f1f1;
+}
+.container .content .content-2 .requests .my-requests img{
+    width: 40px;
+    height: 40px;
+    flex: 2;
+}
+.container .content .content-2 .my-requests .request-content{
+    padding: 0px 20px;
+}
+
+.container .content .content-2 .my-requests .request-content .comment-made{
+    display: flex;
+    flex-direction: column;
+    background-color: #ff4a17;
+}
+
+
+
+/* ========================================================================
+    Pending request
+============================================================================ */
+.container .content .content-2 .pending {
+    min-height: auto;
+    flex: 3;
+    background: #ffff;
+    margin: 0 25px 25px 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+}
+.container .content .content-2 .pending .pending-requests{
+    display: flex;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #f1f1f1;
+}
+
+.container .content .content-2 .pending .pending-requests img{
+    width: 40px;
+    height: 40px;
+    flex: 2;
+}
+
+.container .content .content-2 .pending-requests .request-content{
+    padding: 0px 20px;
+}
+.container .content .content-2 .pending-requests .request-content .sender{
+    padding: 5px 0px;
+}
+.container .content .content-2 .pending-requests .request-content .sender span{
+    font-weight: bold;
+}
+.container .content .content-2 .pending-requests .request-content a{
+    margin-left: 75%;
+}
+
+
+.request-container {
+    display: inline-flex;
+    gap: 20px;
+    /* Adjust the gap as needed */
+}
+
+.request {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.request h3 {
+    margin-top: 0;
+}
+
+.request-content {
+    margin-top: 15px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ff4a17;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.comment-made{
+    background-color: #ff4a17;
+
+}
