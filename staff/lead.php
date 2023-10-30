@@ -98,7 +98,7 @@
                     <div class="card">
                     <div class="box">
                        <h1><?php echo $total_administrative;?> </h1>
-                        <h3>Administrative requests</h3>
+                        <h3>Admin requests</h3>
                     </div>
 
                 </div>
@@ -112,49 +112,73 @@
                 <div class="card">
                     <div class="box">
                     <h1><?php echo $total_pending_admin_requests;?> </h1>
-                        <h3>Pending Requests</h3>
+                        <h3>Pending Admin Requests</h3>
                     </div>
                 </div>
                 <div class="card">
                     <div class="box">
                     <h1><?php echo $total_solved_admin_requests;?> </h1>
-                        <h3>Resolved Requests</h3>
+                        <h3>Resolved Admin Requests</h3>
                     </div>
                 </div>
             </div>
             <div class="content-2">
                 <div class="requests">
                     <div class="title">
-                        <h2>Pending Admin requests</h2>
+                        <h2>Resolved Admin Requests</h2>
                     </div>
                     <?php
-                            while ($row = mysqli_fetch_assoc($pending_admin_requests)) {
-                                $requestID = $row['request_id'];
-                                ?>
-                    <div class="pending-requests">
+                        while ($row = mysqli_fetch_assoc($solved_admin_requests)) {
+                            $requestID = $row['request_id'];
+                    ?>
+                    <div class="my-requests">
                         <div class="student-avatar">
                             <img src="../assets/img/student.png" alt="Student avatar">
                         </div>
                         <div class="request-content">
-                        <p><?php echo $row['request_text'] ?></p>
+                            <p><?php echo $row['request_text'] ?></p>
                             <p style="margin-left: 250px; font-style: italic; width:100%">On <?php echo $row['date_submitted'] ?></p>
-                            <a href="admin_response.php?request_id=<?php echo $requestID ?>" class="btn">Comment</a>
-                        </div>
+                            <p style="margin-left: 30px; font-style: italic; font-size:14px;">Comment: <?php echo $row['comment'] ?></p>
 
+                        </div>
                     </div>
                     <?php
-                            }
-                        ?>    
+                        }
+                    ?>
                 </div>
                 <div class="pending">
                     <div class="title">
-                        <h2>Resolved Admin Requests</h2>
+                        <h2>Pending Admin requests</h2>
                     </div>
-                    <?php
-                            while ($row = mysqli_fetch_assoc($solved_admin_requests)) {
+                        <?php
+                            while ($row = mysqli_fetch_assoc($pending_admin_requests)) {
                                 $requestID = $row['request_id'];
                                 ?>
-                    <div class="pending-requests">
+                                <div class="pending-requests">
+                                    <div class="student-avatar">
+                                        <img src="../assets/img/student.png" alt="Student avatar">
+                                    </div>
+                                    <div class="request-content">
+                                        <p><?php echo $row['request_text'] ?></p>
+                                        <p style="margin-left: 250px; font-style: italic; width:100%">On <?php echo $row['date_submitted'] ?></p>
+                                        <a href="admin_response.php?request_id=<?php echo $requestID ?>" class="btn">Comment</a>
+                                    </div>
+                                </div>
+                                <?php
+                            }
+                        ?>
+                </div>
+
+            </div>
+            <div class="content-2">
+                <div class="requests">
+                    <div class="title">
+                        <h2>Resolved Academic Requests</h2>
+                    </div>
+                    <?php
+                        while ($row = mysqli_fetch_assoc($solved_academic_requests)) {
+                    ?>
+                    <div class="my-requests">
                         <div class="student-avatar">
                             <img src="../assets/img/student.png" alt="Student avatar">
                         </div>
@@ -162,58 +186,33 @@
                         <p><?php echo $row['request_text'] ?></p>
                             <p style="margin-left: 250px; font-style: italic; width:100%">On <?php echo $row['date_submitted'] ?></p>
                             <p style="margin-left: 30px; font-style: italic; font-size:14px;">Comment: <?php echo $row['comment'] ?></p>
-
+                        </div>
                     </div>
                     <?php
-                            }
-                        ?>
-
-                    
+                        }
+                    ?>
                 </div>
-                <div class="requests">
+                <div class="pending">
                     <div class="title">
-
-                        <h2>Pending Academic Requests</h2>
+                        <h2>Pending Academic requests</h2>
                     </div>
-                    <?php
+                        <?php
                             while ($row = mysqli_fetch_assoc($pending_academic_requests)) {
                                 ?>
-                    <div class="my-requests">
-                        <div class="student-avatar">
-                            <img src="../assets/img/student.png" alt="Student avatar">
-                        </div>
-                        <div class="request-content">
-                        <p><?php echo $row['request_text'] ?></p>
-                        <p style="margin-left: 250px; font-style: italic; width:100%">On <?php echo $row['date_submitted'] ?></p>
-                        <!-- <p style="margin-left: 30px; font-style: italic; font-size:14px;">Comment: </p> -->
-                    </div>
-                    </div>  <?php
+                                <div class="pending-requests">
+                                    <div class="student-avatar">
+                                        <img src="../assets/img/student.png" alt="Student avatar">
+                                    </div>
+                                    <div class="request-content">
+                                        <p><?php echo $row['request_text'] ?></p>
+                                        <p style="margin-left: 250px; font-style: italic; width:100%">On <?php echo $row['date_submitted'] ?></p>
+                                    </div>
+                                </div>
+                                <?php
                             }
                         ?>
-
                 </div>
-                <div class="requests">
-                    <div class="title">
 
-                        <h2>Resolved Academic Requests</h2>
-                    </div>
-                    <?php
-                            while ($row = mysqli_fetch_assoc($solved_academic_requests)) {
-                                ?>
-                    <div class="my-requests">
-                        <div class="student-avatar">
-                            <img src="../assets/img/student.png" alt="Student avatar">
-                        </div>
-                        <div class="request-content">
-                        <p><?php echo $row['request_text'] ?></p>
-                        <p style="margin-left: 250px; font-style: italic; width:100%">On <?php echo $row['date_submitted'] ?></p>
-                        <p style="margin-left: 30px; font-style: italic; font-size:14px;">Comment: <?php echo $row['comment'] ?></p>
-                    </div>
-                    </div>  <?php
-                            }
-                        ?>
-
-                </div>
             </div>
         </div>
     </div>
